@@ -1,0 +1,11 @@
+-- V2 Create table types and status
+
+CREATE TABLE Types (
+id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+type varchar(255) NOT NULL
+);
+
+CREATE TABLE Status (
+id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+status varchar (255) NOT NULL
+);
