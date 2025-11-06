@@ -34,14 +34,14 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @PostMapping
+    @PostMapping(consumes = "application/json", produces = "application/json")
     public ResponseEntity<User> createUser(@RequestBody User user){
         User userCreated = userService.createUser(user);
         return new ResponseEntity<>(userCreated, HttpStatus.CREATED);
     }
 
     @PutMapping("/id")
-    public ResponseEntity<User> updateUser(@RequestBody Long id, User userDetails){
+    public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User userDetails){
         Optional<User> user = userService.updateUser(id, userDetails);
 
         if (user.isPresent()){
@@ -50,7 +50,7 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/id")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id){
         Optional<User> deletedUser =userService.deleteUser(id);
 
