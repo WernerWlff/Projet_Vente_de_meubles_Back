@@ -3,10 +3,12 @@ package com.monEntreprise.meubles.services;
 import com.monEntreprise.meubles.entities.User;
 import com.monEntreprise.meubles.repositories.UserRepository;
 import jakarta.transaction.Transactional;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class UserService {
     private final UserRepository userRepository;
 

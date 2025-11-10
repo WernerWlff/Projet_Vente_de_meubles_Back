@@ -3,10 +3,12 @@ package com.monEntreprise.meubles.services;
 import com.monEntreprise.meubles.entities.Type;
 import com.monEntreprise.meubles.repositories.TypeRepository;
 import jakarta.transaction.Transactional;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class TypeService {
     private final TypeRepository typeRepository;
 

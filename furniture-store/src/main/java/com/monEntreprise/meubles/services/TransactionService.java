@@ -8,11 +8,13 @@ import com.monEntreprise.meubles.repositories.TransactionRepository;
 import com.monEntreprise.meubles.repositories.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class TransactionService {
     private final TransactionRepository transactionRepository;
     private final FurnitureRepository furnitureRepository;
