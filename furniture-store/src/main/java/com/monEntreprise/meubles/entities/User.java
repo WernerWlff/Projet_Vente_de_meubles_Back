@@ -1,5 +1,6 @@
 package com.monEntreprise.meubles.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -13,7 +14,7 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(nullable = false )
     private String firstname;
@@ -32,8 +33,10 @@ public class User {
     @Column(nullable = false )
     private String password;
 
-    @Column(nullable = false )
-    private String role;
+    @ManyToOne
+    @JsonBackReference("user-role")
+    @JoinColumn(name = "role_id", nullable = false )
+    private Role role;
 
     @Column(nullable = false )
     private Date created_at;
@@ -49,11 +52,11 @@ public class User {
     @JsonManagedReference("transaction-user")
     private List<Transaction> transactions;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -89,11 +92,11 @@ public class User {
         this.password = password;
     }
 
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(Role role) {
         this.role = role;
     }
 

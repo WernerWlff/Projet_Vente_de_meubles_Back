@@ -13,7 +13,7 @@ import java.util.List;
 public class Furniture {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(nullable = false )
     private String title;
@@ -49,11 +49,11 @@ public class Furniture {
     @JsonManagedReference("transaction-furniture")
     private List<Transaction> transactions;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

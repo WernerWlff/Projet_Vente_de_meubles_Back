@@ -13,10 +13,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-//TODO : Creation of the CRUD - Done
-//TODO : UserDetailsService - Done
-//TODO : JwtAuthenticationFilter - Done
-
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {

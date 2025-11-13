@@ -67,7 +67,6 @@ public class FurnitureService {
         return furnitureRepository.save(furniture);
     }
 
-    //TODO: can be susceptible to changes du to possibles changes in the database
     @Transactional
     public Optional<Furniture> updateFurniture(Long id, Furniture furnitureDetails){
         Optional<Furniture> optionalFurniture = furnitureRepository.findById(id);

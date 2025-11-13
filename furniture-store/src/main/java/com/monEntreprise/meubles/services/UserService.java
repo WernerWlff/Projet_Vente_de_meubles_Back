@@ -29,7 +29,6 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    //TODO: Create the PUT method with the infos we need to change on the front
     @Transactional
     public Optional<User> updateUser(Long id, User userDetails){
         Optional<User> optionalUser = userRepository.findById(id);

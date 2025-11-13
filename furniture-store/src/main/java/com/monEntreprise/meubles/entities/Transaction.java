@@ -11,7 +11,7 @@ import java.util.Date;
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @ManyToOne
     @JsonBackReference("transaction-furniture")
@@ -26,11 +26,11 @@ public class Transaction {
     @Column(nullable = false )
     private Date sold_at;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
