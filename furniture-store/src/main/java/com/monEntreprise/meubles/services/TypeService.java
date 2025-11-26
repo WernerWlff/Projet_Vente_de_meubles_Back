@@ -35,7 +35,7 @@ public class TypeService {
 
         if (optionalType.isPresent()){
             Type existingType = optionalType.get();
-            existingType.setTypes(typeDetails.getTypes());
+            existingType.setType(typeDetails.getType());
             Type updatedType = typeRepository.save(existingType);
             return Optional.of(updatedType);
         }

@@ -3,7 +3,6 @@ package com.monEntreprise.meubles.entities;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import org.w3c.dom.Text;
 
 import java.util.Date;
 import java.util.List;

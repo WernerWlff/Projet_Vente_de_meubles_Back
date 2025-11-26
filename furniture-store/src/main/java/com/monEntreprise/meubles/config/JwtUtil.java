@@ -13,7 +13,6 @@ import java.util.function.Function;
 @Component
 public class JwtUtil {
     private final String SECRET_KEY = "furniture_store_super_secret_key_furniture_store_super_secret_key";
-    //TODO : change token value before the app will be deployed
     private final long EXPIRATION_TIME = 1000 * 60 * 60 * 10;
 
     private Key getSigningKey(){
@@ -45,9 +44,6 @@ public class JwtUtil {
         return extractExpiration(token).before(new Date());
     }
 
-    /*TODO : remake the token without keeping the fullName / email of the user when connecting ( tes instead of test@mail )
-             The idea is to keep the informations of the user secured and not in a token*/
-
     public String generateToken(String username){
         return Jwts.builder()
                 .setSubject(username)
@@ -58,7 +54,7 @@ public class JwtUtil {
     }
 
     public Boolean validateToken(String token, String username){
-        final String extractedUsername = extractUsername(username);
+        final String extractedUsername = extractUsername(token);
         return( extractedUsername.equals(username) && !isTokenExpired(token) );
     }
 }

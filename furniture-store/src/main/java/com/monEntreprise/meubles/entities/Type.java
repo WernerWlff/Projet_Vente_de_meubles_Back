@@ -12,8 +12,8 @@ public class Type {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false )
-    private String types;
+    @Column(name = "type", nullable = false )
+    private String type;
 
     @OneToMany(mappedBy = "type")
     @JsonManagedReference("furniture-type")
@@ -27,12 +27,12 @@ public class Type {
         this.id = id;
     }
 
-    public String getTypes() {
-        return types;
+    public String getType() {
+        return type;
     }
 
-    public void setTypes(String types) {
-        this.types = types;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public List<Furniture> getFurnitures() {
